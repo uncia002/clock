@@ -20,7 +20,7 @@
   },
   "scripts": {
     "build": "webpack",
-    "dev": "npx webpack-dev-server",
+    "dev": "webpack serve",
     "start": "webpack serve",
     "watch": "webpack --watch"
   },
