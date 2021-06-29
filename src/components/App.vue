@@ -1,22 +1,30 @@
 <template>
   <div id="app">
-    <div class="main-block">
+    <!-- <div class="main-block">
       <Date/>
     </div>
     <div class="main-block">
 
-    </div>
+    </div> -->
+    <Clock/>
+    <Layout/>
+    <Set/>
   </div>
 </template>
 
 <script>
 import Clock from './Clock.vue'
 import Date from './Date.vue'
+import Layout from './Layout.vue'
+import Set from './Set.vue'
+
 export default {
   name: 'App',
   components: {
     Clock,
     Date,
+    Layout,
+    Set
   }
 }
 </script>
@@ -42,19 +50,13 @@ body{
   margin: 0;
   height: 100%;
   background-color:#EEEEEE;
-  overflow-y: hidden;
 
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   color: black;
   width: 100%;
-  height: 100%;
-  font-size: 400px;
+  height: 200%;
   display: flex;
-}
-.main-block{
-  width: 50%;
-  height: 100%;
 }
 </style>

@@ -1,14 +1,20 @@
 <template>
-  <div class="Clock">
+  <div class="clock">
     <div class="date">
       <h1>{{ month }}, {{day}}</h1>
     </div>
     <div class="Time">
-      <h1>{{ hours }}</h1>
-      <h1>:</h1>
-      <h1>{{ minutes }}</h1>
-      <h1>:</h1>
-      <h1>{{ seconds }}</h1>
+      <div class="time-block">
+        <h1>{{ hours }}</h1>
+      </div>
+      <h1 class="colon">:</h1>
+      <div class="time-block">
+        <h1>{{ minutes }}</h1>
+      </div>
+      <h1 class="colon">:</h1>
+      <div class="time-block">
+        <h1>{{ seconds }}</h1>
+      </div>
     </div>
   </div>
 </template>
@@ -59,7 +65,7 @@ export default {
 
 <style scoped>
 
-.Clock{
+.clock{
   font-family: ta;
   position: fixed;
   left:50%;
@@ -75,12 +81,19 @@ export default {
 .Time{
   display:flex;
   justify-content: center;
-  font-size:200%;
+  text-align: center;
+  font-size:80px;
   background-color: #EEEEEE;
   width:800px;
   height: 300px;
 }
 .Time h1{
   margin:0;
+}
+.colon{
+  width: 40px;
+}
+.time-block{
+  width:190px;
 }
 </style>
