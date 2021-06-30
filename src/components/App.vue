@@ -6,9 +6,10 @@
     <div class="main-block">
 
     </div> -->
+    <Anime/>
     <Clock/>
     <Layout/>
-    <Set/>
+    <!-- <Set/> -->
   </div>
 </template>
 
@@ -17,6 +18,7 @@ import Clock from './Clock.vue'
 import Date from './Date.vue'
 import Layout from './Layout.vue'
 import Set from './Set.vue'
+import Anime from './Anime.vue'
 
 export default {
   name: 'App',
@@ -24,7 +26,8 @@ export default {
     Clock,
     Date,
     Layout,
-    Set
+    Set,
+    Anime
   }
 }
 </script>
@@ -40,7 +43,7 @@ export default {
 }
 @font-face {
   font-family:'Lato';
-  src: url("../assets/Lato-Light.ttf");
+  src: url("../assets/Lato-Thin.ttf");
 }
 html{
   height: 100%;

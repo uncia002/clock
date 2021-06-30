@@ -1,9 +1,22 @@
 <template>
-  <div class="layout">
-    <div class="">
-      {{scrollY}}
+  <div class="Set">
+    <div class="color-select">
+      <div class="color">
+
+      </div>
+      <div class="color">
+
+      </div>
+      <div class="color">
+
+      </div>
+      <div class="color">
+
+      </div>
     </div>
-    <h1 class="appname">ism</h1>
+    <div class="alarm">
+
+    </div>
   </div>
 </template>
 
@@ -12,50 +25,48 @@
 export default {
   data() {
     return {
-      start_pos:0,
-      current_pos:0,
-      scrollY:0,
     }
   },
   mounted(){
-    window.addEventListener('scroll', function(e){
-      this.current_pos = window.scrollTop;
-      if (this.current_pos > this.start_pos) {
-        console.log('down');
-      } else {
-        console.log('up');
-      }
-      this.window.scrollTop
-      this.start_pos = this.current_pos;
-    });
 
   },
   computed:{
   },
   methods: {
-    switchActive(Y){
-      if(Y>1){}
-    },
-    handleScroll() {
-      this.current_pos=window.scrollTop
-    }
   }
 }
 </script>
 
 <style scoped>
 
-.layout{
+.Set{
   font-family: ta;
   position: fixed;
-  width: 100%;
-  height: 100%;
+  height: 100px;
+  background-color:#111;
+  bottom: 0;
+  transform: translateX(-50%);
+  color: #EEEEEE;
+  padding:0 50px;
+  left: 50%;
+  border-radius: 20px 20px 0 0;
+}
+.color-select{
+  display: flex;
 }
 
-.appname{
-  position:absolute;
-  bottom:0;
-  font-size:80px;
-  margin:0;
+.color{
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #666666;
+  margin:40px 20px;
 }
+
+.alarm{
+  width: 900px;
+  height: 100%;
+  margin-left: 30px;
+}
+
 </style>

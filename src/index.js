@@ -1,5 +1,6 @@
 import Vue from "vue";
 import App from "./components/App"; // 作ったやつ
+import axios from 'axios'
 
 new Vue({
   el: "#app", // アプリをマウントする要素(セレクタで指定)

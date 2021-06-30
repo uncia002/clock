@@ -1,7 +1,11 @@
 <template>
   <div class="clock">
     <div class="date">
-      <h1>{{ month }}, {{day}}</h1>
+      <h1>{{ month }}</h1>
+      <h1>{{date}} {{day}}</h1>
+    </div>
+    <div class="place">
+      <h1>Japan  Tokyo</h1>
     </div>
     <div class="Time">
       <div class="time-block">
@@ -20,7 +24,7 @@
 </template>
 
 <script>
-
+import axios from 'axios'
 export default {
   data() {
     return {
@@ -28,7 +32,10 @@ export default {
       minutes:0,
       seconds:0,
       month:"",
-      day:0
+      date:0,
+      day:0,
+      dayStr:[ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ],
+      info:null,
     }
   },
   mounted(){
@@ -48,9 +55,10 @@ export default {
       let monthstr = ['January','February','March','April','May','June','July','August','September','October','November','December']
       let now = new Date()
       this.month = monthstr[now.getMonth()];
-      this.day = now.getDate();
+      this.date = now.getDate();
+      this.day = this.dayStr[now.getDay()]
     },
-    zeroPadding: function(num, len) {
+    zeroPadding(num, len) {
     　 let zero = '';
      //0の文字列を作成
       for(var i = 0; i < len; i++) {
@@ -64,7 +72,9 @@ export default {
 </script>
 
 <style scoped>
-
+h1{
+  margin:0;
+}
 .clock{
   font-family: ta;
   position: fixed;
@@ -74,9 +84,8 @@ export default {
 }
 .date{
   position: absolute;
-  top: -50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left:0;
+  top:-40px;
 }
 .Time{
   display:flex;
@@ -84,16 +93,20 @@ export default {
   text-align: center;
   font-size:80px;
   background-color: #EEEEEE;
-  width:800px;
-  height: 300px;
-}
-.Time h1{
-  margin:0;
 }
 .colon{
   width: 40px;
 }
 .time-block{
   width:190px;
+}
+.place{
+  position: absolute;
+  bottom:-20px;
+  right: 0;
+  width: 200px;
+  border-radius: 30px;
+  text-align: right;
+
 }
 </style>
